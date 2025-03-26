@@ -1,3 +1,1 @@
-# Geoexplorer
-
-Google Map integration with Gemini
+# Chrome extension

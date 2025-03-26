@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoExplorer AI</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div class="logo-container">
+            <img src="../assets/icons/icon48.png" alt="GeoExplorer AI Logo" class="logo-image">
+            <h1>GeoExplorer AI</h1>
+        </div>
+        <button id="openOptions">Settings</button>
+    </div>
+    
+    <div id="content">
+        <div id="map"></div>
+        
+        <div id="sidebar">
+            <div class="control-panel">
+                <input type="text" id="locationSearch" placeholder="Search for a location">
+                <button id="searchButton">Search</button>
+                
+                <div id="locationInfo">
+                    <p id="coordinatesDisplay">Latitude: 0.000000, Longitude: 0.000000</p>
+                    <p id="addressDisplay">Address: Not selected</p>
+                    <button id="saveLocation" disabled>Save Location</button>
+                </div>
+            </div>
+            
+            <div class="control-panel">
+                <h3>Map Settings</h3>
+                <select id="mapStyle">
+                    <option value="default">Default</option>
+                    <option value="satellite">Satellite</option>
+                    <option value="terrain">Terrain</option>
+                    <option value="night">Night Mode</option>
+                    <option value="retro">Retro</option>
+                    <option value="silver">Silver</option>
+                </select>
+                
+                <div>
+                    <input type="checkbox" id="trafficLayer">
+                    <label for="trafficLayer">Traffic</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="transitLayer">
+                    <label for="transitLayer">Transit</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="bicyclingLayer">
+                    <label for="bicyclingLayer">Bicycling</label>
+                </div>
+            </div>
+            
+            <div class="control-panel">
+                <h3>Saved Locations</h3>
+                <div id="savedLocations">
+                    <p>No saved locations yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Extension-specific scripts -->
+    <script src="../extension-maps.js"></script>
+    <script src="../map-styles.js"></script>
+    <script src="../app/globals.js"></script>
+    
+    <!-- Extension main code -->
+    <script src="../api-service.js"></script>
+    <script src="../location-manager.js"></script>
+    <script src="../map-config.js"></script>
+    <script src="../ui-controller.js"></script>
+    <script src="../chat-interface.js"></script>
+    <script src="../app/app.js"></script>
+</body>
+</html>

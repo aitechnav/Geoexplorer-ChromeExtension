@@ -1,0 +1,137 @@
+/**
+ * Main styles for GeoExplorer AI Extension
+ */
+
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    background-color: #4285F4;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+#content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+#map {
+    flex: 1;
+    height: 100%;
+}
+
+#sidebar {
+    width: 300px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.info-window {
+    max-width: 300px;
+    padding: 10px;
+}
+
+.control-panel {
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    margin-bottom: 15px;
+}
+
+.saved-location {
+    background: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.saved-location:hover {
+    background-color: #e9ecef;
+}
+
+button {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+button:hover {
+    background-color: #3367d6;
+}
+
+button:disabled {
+    background-color: #a9c3f8;
+    cursor: not-allowed;
+}
+
+select, input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Error message styling */
+.error-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 80%;
+}
+
+.error-message button {
+    margin-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column;
+    }
+    
+    #sidebar {
+        width: 100%;
+        max-height: 300px;
+    }
+}
