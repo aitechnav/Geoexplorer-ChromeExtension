@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "GeoExplorer AI",
+  "version": "1.0.0",
+  "description": "Explore locations with AI-powered insights using Google Maps and Gemini",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "geolocation",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://maps.googleapis.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options/options.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' https://maps.googleapis.com/ https://cdn.jsdelivr.net/ https://cdnjs.cloudflare.com/; child-src 'self';"
+  },
+  "web_accessible_resources": [{
+    "resources": ["app/*", "js/*", "assets/*"],
+    "matches": ["<all_urls>"]
+  }]
+}
